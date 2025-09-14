@@ -191,10 +191,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function fetchDynamicPrompt() {
-        const metaPrompt = "Generate exactly one short-125-character, new, fucked up and explicit wild image prompt as text only of outlandish and psychologically thrilling image. i.e. demented, evil, psychotic photo.";
+        const metaPrompt = "Generate exactly one short-125-character, new, fucked up and explicit wild image prompt as text only of outlandish and psychologically thrilling image. i.e. demented, evil, psychotic art.";
         const textModel = document.getElementById("model-select")?.value;
         const seed = generateSeed();
-        const apiUrl = `https://text.pollinations.ai/${encodeURIComponent(metaPrompt)}?seed=${seed}&safe=false${textModel ? `&model=${encodeURIComponent(textModel)}`&referer=unityailab.com : ""}`;
+        const apiUrl = `https://text.pollinations.ai/${encodeURIComponent(metaPrompt)}?seed=${seed}&safe=false${textModel ? `&model=${encodeURIComponent(textModel)}` : ""}`;
         try {
             const response = await window.pollinationsFetch(apiUrl, {
                 method: "GET",
@@ -731,9 +731,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Screensaver initialized with dynamic API prompts and streaming thumbnail gallery!");
 });
-
-
-
 
 
 
