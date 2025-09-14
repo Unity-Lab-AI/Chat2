@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchImageModels() {
         try {
-            const res = await window.pollinationsFetch("https://image.pollinations.ai/models", {
+            const res = await window.pollinationsFetch("https://image.pollinations.ai/models?referrer=unityailab.com", {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
                 cache: "no-store"
@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const metaPrompt = "Generate exactly one short-125-character, new, fucked up and explicit wild image prompt as text only of outlandish and psychologically thrilling image. i.e. demented, evil, psychotic photo.";
         const textModel = document.getElementById("model-select")?.value;
         const seed = generateSeed();
-        const apiUrl = `https://text.pollinations.ai/openai?${encodeURIComponent(metaPrompt)}?seed=${seed}&safe=false${textModel ? `&model=${encodeURIComponent(textModel)}` : ""}`;
+        const apiUrl = `https://text.pollinations.ai/${encodeURIComponent(metaPrompt)}?seed=${seed}${textModel ? `&model=${encodeURIComponent(textModel)}` : ""}&referrer=unityailab.com`;
         try {
             const response = await window.pollinationsFetch(apiUrl, {
                 method: "GET",
@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const enhance = settings.enhance;
         const priv = settings.priv;
 
-        const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=${width}&height=${height}&seed=${seed}&model=${model}&nologo=true&private=${priv}&enhance=${enhance}&nolog=true&referrer=unityailab.com`;
+        const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=${width}&height=${height}&seed=${seed}&model=${model}&nologo=true&private=${priv}&enhance=${enhance}&referrer=unityailab.com`;
         console.log("Generated new image URL:", url);
 
         const nextImage = currentImage === 'image1' ? 'image2' : 'image1';

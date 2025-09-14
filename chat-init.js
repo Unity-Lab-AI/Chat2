@@ -220,7 +220,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const urlObj = new URL(img.src);
         const newSeed = Math.floor(Math.random() * 1000000);
         urlObj.searchParams.set("seed", newSeed);
-        urlObj.searchParams.set("nolog", "true");
         const newUrl = urlObj.toString();
         const loadingDiv = document.createElement("div");
         loadingDiv.className = "ai-image-loading";
@@ -602,7 +601,7 @@ document.addEventListener("DOMContentLoaded", () => {
         imagePrompt = imagePrompt.slice(0, 100) + ", photographic";
         const updateImage = () => {
             const seed = randomSeed();
-            voiceChatImage.src = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=512&height=512&seed=${seed}&nolog=true&referrer=unityailab.com`;
+            voiceChatImage.src = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=512&height=512&seed=${seed}&nologo=true&private=true&referrer=unityailab.com`;
         };
         updateImage();
         slideshowInterval = setInterval(updateImage, 10000);

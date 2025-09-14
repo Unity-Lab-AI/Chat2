@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchPollinationsModels() {
         try {
-            const res = await window.pollinationsFetch("https://text.pollinations.ai/models", {
+            const res = await window.pollinationsFetch("https://text.pollinations.ai/models?referrer=unityailab.com", {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
                 cache: "no-store"

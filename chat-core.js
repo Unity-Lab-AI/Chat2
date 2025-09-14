@@ -491,7 +491,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const modelSelectEl = document.getElementById("model-select");
         const model = modelSelectEl?.value || currentSession.model;
         if (!model) throw new Error("No model selected");
-        const apiUrl = `https://text.pollinations.ai/${encodeURIComponent(prompt)}?model=${encodeURIComponent(model)}`;
+        const apiUrl = `https://text.pollinations.ai/${encodeURIComponent(prompt)}?model=${encodeURIComponent(model)}&referrer=unityailab.com`;
 
         try {
             const res = await window.pollinationsFetch(apiUrl, {

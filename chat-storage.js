@@ -340,7 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const urlObj = new URL(img.src);
         const newSeed = Math.floor(Math.random() * 1000000);
         urlObj.searchParams.set('seed', newSeed);
-        urlObj.searchParams.set('nolog', 'true');
         const newUrl = urlObj.toString();
         const loadingDiv = document.createElement("div");
         loadingDiv.className = "ai-image-loading";
@@ -634,7 +633,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const seed = Math.floor(Math.random() * 1000000);
             const imageId = `voice-img-${Date.now()}`;
             localStorage.setItem(`voiceImageId_${imageId}`, imageId);
-            const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=512&height=512&seed=${seed}&nolog=true&referrer=unityailab.com`;
+            const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=512&height=512&seed=${seed}&nologo=true&private=true&referrer=unityailab.com`;
             voiceChatImage.src = imageUrl;
             voiceChatImage.dataset.imageId = imageId;
             voiceChatImage.onload = () => {

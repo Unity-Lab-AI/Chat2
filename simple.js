@@ -555,7 +555,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const urlObj = new URL(img.src);
             const newSeed = Math.floor(Math.random() * 1000000);
             urlObj.searchParams.set('seed', newSeed);
-            urlObj.searchParams.set('nolog', 'true');
             const newUrl = urlObj.toString();
 
             const loadingDiv = document.createElement("div");
